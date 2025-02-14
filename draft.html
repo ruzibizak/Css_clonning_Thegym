@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .side-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .side-menu.active {
+            transform: translateX(0);
+        }
+        .penn-blue {
+            background-color: #011F5B;
+        }
+        .penn-red {
+            color: #990000;
+        }
+    </style>
+    <title>Penn University</title>
+</head>
+<body class="bg-gray-100">
+    <!-- Announcement Banner -->
+    <div class="p-6 penn-blue">
+        <div class="border-solid">
+            <p class="text-white font-bold text-2xl mb-2 underline cursor-pointer hover:no-underline">
+                On Friday, February 14, 2025 the University will suspend normal operations 
+                for the Eagles victory parade
+            </p>
+            <p class="text-white">
+                Normal operations will resume <br> Monday, February 17, 2025.
+            </p>
+        </div>
+    </div>
+
+    <!-- image div in center -->
+   
+    <!-- Background Image with Navigation Controls -->
+    <div class="relative p-48 bg-cover bg-center" style="background-image: url('images/avian-bird-flu.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50">
+            <!-- Navigation Controls -->
+            <div class="flex justify-between items-center p-4">
+                <div class="flex items-center space-x-4">
+                    <!-- Search Icon -->
+                    <svg class="w-6 h-6 text-white cursor-pointer hover:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <img src="images/UPenn-logo.svg" alt="UPenn Logo" class="h-20 w-20">
+                      </div>
+                
+                <!-- Hamburger Menu Button -->
+                <button id="menuButton" class="text-white p-2 hover:bg-black hover:bg-opacity-30 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 p-6 text-gray-800 ">
+            <h3 class="text-sm font-semibold uppercase mb-3 text-white">Health Sciences</h3>
+            <div class="space-y-3">
+                <p class="text-3xl font-extralight text-white">How Penn is helping with bird flu research and disease surveillance</p>
+                <p class="text-white">Faculty are working on a new vaccine for the H5N1 virus, studying its transmission, and helping the state test samples from birds and mammals.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Side Menu Panel -->
+    <div id="sideMenu" class="side-menu fixed top-0 left-0 h-full w-80 bg-white shadow-lg z-50">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-xl font-bold penn-red">Menu</span>
+                <button id="closeMenu" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase mb-3">About</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-800 hover:text-blue-600">About Penn</a>
+                        <a href="#" class="block text-gray-800 hover:text-blue-600">Facts</a>
+                        <a href="#" class="block text-gray-800 hover:text-blue-600">Admissions</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase mb-3">Academics</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-800 hover:text-blue-600">Schools</a>
+                        <a href="#" class="block text-gray-800 hover:text-blue-600">Calendar</a>
+                        <a href="#" class="block text-gray-800 hover:text-blue-600">Libraries</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase mb-3">Research</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-800 hover:text-blue-600">Research Directory</a>
+                        <a href="#" class="block text-gray-800 hover:text-blue-600">Centers & Institutes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black opacity-50 z-40 hidden"></div>
+   
+    <!-- Triangle Image next to Topic -->
+    <div class="flex justify-center items-center my-8">
+        <div class="border-b-2 border-gray-300 w-1/2 text-center">
+            <h2 class="text-2xl font-bold text-black">Topic</h2>
+        </div>
+        <div class="ml-4">
+            <img src="images/icon-down-triangle.svg" alt="Triangle Image" class="h-6 w-6">
+        </div>
+        
+            
+    </div>
+    
+        </div>
+        <div>
+            <h1 class="text-5xl font-bold text-black text-blue-900">News</h1>
+        </div>
+
+        <div class="flex flex-col gap-1 top-10 mt-10">
+            
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg max-w-md text-center">
+                <!-- Image Section -->
+                <div class="group relative overflow-hidden rounded-t-lg">
+                    <img 
+                        src="images/pavilion-gift-teaser.jpg" 
+                        alt="Health Sciences Image" 
+                        class="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-110"
+                    >
+                </div>
+                
+                <!-- Heading -->
+                <h1 class="text-3xl font-bold text-red-900 mb-4 mt-6">HEALTH SCIENCES</h1>
+                
+                <!-- Paragraph -->
+                <p class="text-gray-700 text-lg mb-4 group-hover:underline transition-all duration-300">
+                    Catherine and Anthony Clifton make transformational gift to accelerate patient care, research, and education at Penn Medicine.
+                </p>
+            </div>
+          <!-- cart 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-lg max-w-md text-center border-t-6 border-b-4 border-gray-100 ">
+                <!-- Heading -->
+                <h1 class="text-3xl font-bold text-red-900 mb-4">HEALTH SCIENCES</h1>
+                
+                <!-- Paragraph -->
+                <p class="text-gray-700 text-lg mb-4 cursor-pointer hover:underline">
+                    Jonathan A. Epstein named head of Perelman School of Medicine and Penn Health System.
+                </p>
+            </div>
+            <!-- cart 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-lg max-w-md text-center border-t-6 border-b-4 border-gray-100 ">
+                <!-- Heading -->
+                <h1 class="text-3xl font-bold text-red-900 mb-4">HEALTH SCIENCES</h1>
+                
+                <!-- Paragraph -->
+                <p class="text-gray-700 text-lg mb-4 cursor-pointer hover:underline">
+                    Jonathan A. Epstein named head of Perelman School of Medicine and Penn Health System.
+                </p>
+            </div>
+            <!-- cart 3 -->
+            <div class="bg-white p-8 rounded-lg shadow-lg max-w-md text-center border-t-6 border-b-4 border-gray-100 ">
+                <!-- Heading -->
+                <h1 class="text-3xl font-bold text-red-900 mb-4">HEALTH SCIENCES</h1>
+                
+                <!-- Paragraph -->
+                <p class="text-gray-700 text-lg mb-4 cursor-pointer hover:underline">
+                    Jonathan A. Epstein named head of Perelman School of Medicine and Penn Health System.
+                </p>
+            </div>
+             <!-- cart 4 -->
+             <div class="bg-white p-8 rounded-lg shadow-lg max-w-md text-center border-t-6 border-b-4 border-gray-100 ">
+                <!-- Heading -->
+                <h1 class="text-3xl font-bold text-red-900 mb-4">HEALTH SCIENCES</h1>
+                
+                <!-- Paragraph -->
+                <p class="text-gray-700 text-lg mb-4 cursor-pointer hover:underline">
+                    Jonathan A. Epstein named head of Perelman School of Medicine and Penn Health System.
+                </p>
+            </div>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <div class="bg-white p-8 rounded-lg shadow-lg max-w-md text-center border-t-6 border-b-4 border-gray-100">
+                    <!-- Heading -->
+                    <link class="text-xl font-bold text-red-500 mb-4">MORE NEWS VIA PENN TODAY</link>
+                </div>
+                
+                <div class="relative">
+                    
+                    <img src="images/penn-center-innovation.jpg" alt="Penn Today" class="w-full h-full object-cover">
+                    <div class="absolute top-1/12 left-1/2 transform -translate-x-1/2 -translate-y-3/4 bg-blue-900 shadow-lg text-center px-7 py-5 rounded-lg w-11/12 max-w-md ">
+                        <div class="mb-4">
+                            <span class="text-sm font-semibold  text-white">CAMPUS & COMMUNITY</span>
+                        </div>
+                        <h1 class="text-4xl font-bold  mb-4 text-white">
+                            Penn Center for Innovation Celebrates 10 Years
+                        </h1>
+                        <p class="text-lg  mb-6 text-white">
+                            The University's nexus for technology transfer supports researchers in their innovative efforts, from CAR T to mRNA advancements that have dramatically reshaped the world.
+                        </p>
+                        <a href="#" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300 text-white">
+                            LEARN MORE
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+    
+   <div class="">
+
+   </div>
+        
+</body>
+</html>
+<script>
+    const dropdownButton = document.getElementById('dropdownButton');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    dropdownButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+    });
+
+    window.addEventListener('click', (e) => {
+        if (!dropdownButton.contains(e.target)) {
+            dropdownMenu.classList.add('hidden');
+        }
+    });
+</script>
+<script>
+    const menuButton = document.getElementById('menuButton');
+    const closeMenu = document.getElementById('closeMenu');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+
+    function openMenu() {
+        sideMenu.classList.add('active');
+        overlay.classList.remove('hidden');
+    }
+
+    function closeMenuPanel() {
+        sideMenu.classList.remove('active');
+        overlay.classList.add('hidden');
+    }
+
+    menuButton.addEventListener('click', openMenu);
+    closeMenu.addEventListener('click', closeMenuPanel);
+    overlay.addEventListener('click', closeMenuPanel);
+</script>
